@@ -1,0 +1,29 @@
+li{
+  list-style: none;
+  color: #fff;
+
+}
+
+a{
+    text-decoration: none;
+    color:#fff
+}
+
+.icons{
+    margin: 5px;
+}
+
+footer{
+    background-color: #020c1b86;
+    color: #fff;
+    padding: 50px;
+}
+
+p{
+    color: #112644;
+    line-height: 20px;
+}
+
+
+
+  
