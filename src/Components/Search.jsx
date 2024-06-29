@@ -56,7 +56,7 @@ function Search({ data }) {
           </p>
           <form onSubmit={handleSubmit} className="flex items-center gap-3">
             <input
-              className="bg-gray-600 text-slate-100 px-12 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="bg-transparent backdrop-blur-xl border text-slate-100  w-[500px] p-3 px-4 rounded-xl focus:outline-none focus:ring-2 "
               type="text"
               placeholder="Search..."
               value={searchTerm}
@@ -64,7 +64,7 @@ function Search({ data }) {
             />
             <button
               type="submit"
-              className="bg-blue-500 text-white px-6 py-2 rounded-xl hover:bg-blue-600 transition duration-300"
+              className=" text-white p-3 w-[20%] rounded-xl border bg-sky-700 hover:bg-blue-600 transition duration-300"
             >
               Search
             </button>

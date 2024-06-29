@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CiSearch } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
@@ -7,6 +7,7 @@ function Header() {
   const [showInput, setShowInput] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+  const inputRef = useRef(null);
 
   const toggleInput = () => {
     setShowInput(prevState => !prevState);
@@ -17,6 +18,22 @@ function Header() {
     navigate("/search/" + searchTerm);
   }
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (inputRef.current && !inputRef.current.contains(event.target)) {
+        setShowInput(false);
+      }
+    };
+
+    const handleScroll = () => {
+      setShowInput(false);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+
+  }, []);
+
   return (
     <header className='backdrop-blur-sm w-full fixed z-50 top-0'>
       <div className='flex items-center justify-between py-5 px-[8rem]'>
@@ -26,7 +43,7 @@ function Header() {
         <div className="navlinks flex items-center gap-6 font-semibold">
           <Link to="/movies"><li>Movies</li></Link>
           <Link to="/tv"><li>TV Shows</li></Link>
-          <div className='flex items-center'>
+          <div className='flex items-center' ref={inputRef}>
             {showInput && (
               <form onSubmit={handleSubmit} className="flex items-center">
                 <input 
