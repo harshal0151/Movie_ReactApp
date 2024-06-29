@@ -1,10 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-//redux-thunk: helps us create async action creators. Helps us write async logic with redux
-
-//async operations do not go in slice's reducer
-
 export const fetchTrendingMovies = createAsyncThunk(
   "fetchTrending",
   async () => {
@@ -29,8 +25,6 @@ export const fetchTrendingMovies = createAsyncThunk(
   }
 );
 
-//https://api.themoviedb.org/3/tv/popular?language=en-US&page=1
-//https://api.themoviedb.org/3/movie/popular?language=en-US&page=1
 export const fetchPopularMovies = createAsyncThunk("fetchPopular", async () => {
   try {
     const [movies, tv] = await Promise.all([
@@ -52,8 +46,6 @@ export const fetchPopularMovies = createAsyncThunk("fetchPopular", async () => {
   }
 });
 
-//https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1
-//https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1
 export const fetchTopRatedMovies = createAsyncThunk(
   "fetchTopRated",
   async () => {
@@ -78,7 +70,6 @@ export const fetchTopRatedMovies = createAsyncThunk(
   }
 );
 
-//https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1
 export const searchMovies = createAsyncThunk(
   "searchMovie",
   async (searchTerm) => {
@@ -96,6 +87,21 @@ export const searchMovies = createAsyncThunk(
   }
 );
 
+
+export const fetchAllMovies = createAsyncThunk("fetchAllMovies", async () => {
+  try {
+    const moviesResult = await axios.get("https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&api_key=" + import.meta.env.VITE_TMDB_API_KEY);
+
+    console.log(moviesResult.data.results);
+    return moviesResult.data.results;
+  } catch (err) {
+    return err;
+  }
+});
+
+// https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=6a20de0fdcb63326f58d95feefcfed77  := genres
+// https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.des
+
 const slice = createSlice({
   name: "moviesSlice",
   initialState: {
@@ -109,7 +115,7 @@ const slice = createSlice({
     status: "idle",
     error: null,
   },
-  reducers: {}, //these were sync actions
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchTrendingMovies.pending, (state, action) => {

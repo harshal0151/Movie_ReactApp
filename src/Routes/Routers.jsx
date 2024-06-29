@@ -6,6 +6,7 @@ import Home from '../Pages/Home'
 import TvShows from '../Pages/TvShows'
 import Movies from '../Pages/Movies'
 import SearchResults from '../Components/SearchResults'
+import SingleMovie from '../Pages/SingleMovie'
 
 
 
@@ -18,6 +19,7 @@ function Router() {
     <Route path="/movies" element={<Movies/>} />
     <Route path="/tv" element={<TvShows />} />
     <Route path="/search/:searchTerm" element={<SearchResults />}></Route>
+    <Route path="/movies/:" element={<SingleMovie />}></Route>
    </Routes>
    <Footer/>
    </BrowserRouter>

@@ -10,12 +10,12 @@ function MoviesDisplay({ heading, option1, option2, choice1, choice2 }) {
   const [visible, setVisible] = useState(true);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1800,
     slidesToShow: 6,
     slidesToScroll: 5,
-    swipeToSlide: true,
+
     autoplaySpeed: 200,
     responsive: [
       {
@@ -24,7 +24,7 @@ function MoviesDisplay({ heading, option1, option2, choice1, choice2 }) {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: false,
          
         }
       },
@@ -50,7 +50,7 @@ function MoviesDisplay({ heading, option1, option2, choice1, choice2 }) {
     <>
       <section id="movieDisplay" className="p-10">
         <header className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold">{heading}</h2>
+          <h2 className="text-2xl font-bold m-2">{heading}</h2>
           <div className="flex space-x-4">
             <span
               className={`cursor-pointer ${visible ? "text-blue-500" : "text-gray-500"}`}

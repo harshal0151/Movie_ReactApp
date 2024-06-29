@@ -1,4 +1,7 @@
-/* eslint-disable react/prop-types */
+import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+
 const img_base_path = "https://image.tmdb.org/t/p/original/";
 
 function formatDate(dateString) {
@@ -9,26 +12,36 @@ function formatDate(dateString) {
 
 function MovieDisplay({ movie }) {
   return (
-    <div className="movie">
-      <div className="image-container">
-        <img
+    <div className="movie  relative">
+      <Link>
+      <div className="image-container overflow-hidden ">
+        <img className=" object-cover transition ease-in-out delay-150 hover:scale-110  duration-300"
           src={img_base_path + movie.poster_path}
           alt={movie.title || movie.original_title}
         />
       </div>
-      <div className="info">
-        <h3>
+      </Link>
+      <div className="info m-1 ">
+       <Link to= "">
+       <h3 className="font-bold">
           {movie.title ||
             movie.original_title ||
             movie.name ||
             movie.original_name}
         </h3>
-        <p>
+       </Link>
+        <p className="mt-2">
           {movie.release_date
             ? formatDate(movie.release_date)
             : formatDate(movie.first_air_date)}
         </p>
       </div>
+      <div className="flex justify-center items-center gap-1 absolute bg-transparent px-2 rounded-lg right-3 top-2 bg-sky-500 drop-shadow-2xl">
+       <FaStar className="text-amber-400 text-sm"/> <span className="text-white  text-sm ">{Math.floor(movie.vote_average)}</span>
+      </div>
+      {/* <div className=" absolute px-3 pb-1 bg-red-500 text-white right-2 bottom-[3.8rem] rounded-md text-sm">
+        <span>{movie.media_type}</span>
+      </div> */}
     </div>
   );
 }

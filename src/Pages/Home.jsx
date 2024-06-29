@@ -30,12 +30,12 @@ function Home() {
   }, [dispatch]);
   
 
-  console.log(trendingMoviesByDay, trendingMoviesByWeek, topRatedTVShows,);
+  // console.log(trendingMoviesByDay, trendingMoviesByWeek, topRatedTVShows,);
 
   return(
     <> 
     
-   <Search />
+   <Search data={topRatedTVShows}/>
     
     <MoviesDisplay
       heading="Trending"
