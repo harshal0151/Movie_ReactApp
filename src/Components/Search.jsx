@@ -39,6 +39,7 @@ function Search({ data }) {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black opacity-70"></div>
+                <div className="opacity-layer"></div>
                 
               </div>
                

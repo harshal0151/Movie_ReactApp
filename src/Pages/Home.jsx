@@ -35,7 +35,7 @@ function Home() {
   return(
     <> 
     
-   <Search data={topRatedTVShows}/>
+   <Search data={trendingMoviesByDay}/>
     
     <MoviesDisplay
       heading="Trending"
