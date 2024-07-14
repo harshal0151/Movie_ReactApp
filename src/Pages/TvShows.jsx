@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllDiscover } from '../slice';
+import looding from '../assets/lodding.gif'
 
 const img_base_path = "https://image.tmdb.org/t/p/original/";
 
@@ -63,7 +64,7 @@ function TvShows() {
           </div>
         ))}
       </div>
-      {status === 'Loading...' && <div>Loading...</div>}
+      {status === 'Loading...' && <div><img src={looding} alt="" /></div>}
     </>
   );
 }

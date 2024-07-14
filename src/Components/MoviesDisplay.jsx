@@ -36,7 +36,7 @@ function MoviesDisplay({ heading, option1, option2, choice1, choice2 }) {
         }
       },
       {
-        breakpoint: 350,
+        breakpoint: 420,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -76,7 +76,9 @@ function MoviesDisplay({ heading, option1, option2, choice1, choice2 }) {
                 ))
               : option2.map((movie, index) => (
                   <div key={index} className="px-2">
+                    
                     <MovieDisplay movie={movie} />
+                    
                   </div>
                 ))}
           </Slider>

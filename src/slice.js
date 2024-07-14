@@ -153,8 +153,8 @@ const slice = createSlice({
         state.status = "Loading...";
       })
       .addCase(fetchAllDiscover.fulfilled, (state, action) => {
-        state.AllMovies = action.payload.AllMovies;
-        state.AllTv = action.payload.AllTv;
+        state.AllMovies = [...state.AllMovies, ...action.payload.AllMovies];
+        state.AllTv = [...state.AllTv, ...action.payload.AllTv];
         state.page = action.payload.page;
         state.status = "succeeded";
       })
@@ -166,3 +166,5 @@ const slice = createSlice({
 });
 
 export const sliceReducer = slice.reducer;
+
+
