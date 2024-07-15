@@ -2,6 +2,8 @@ import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllDiscover } from '../slice';
 import looding from '../assets/lodding.gif'
+import { Link } from 'react-router-dom';
+
 
 const img_base_path = "https://image.tmdb.org/t/p/original/";
 
@@ -42,13 +44,13 @@ function TvShows() {
       <div className="flex flex-wrap justify-center gap-8 mb-12">
         {AllTv.map((movie, index) => (
           <div className="flex flex-col items-center rounded-lg shadow-lg overflow-hidden w-60" key={index}>
-            <div className="w-full h-80 overflow-hidden">
+            <Link to={`/singleItem/${movie.id}`} className="w-full h-80 overflow-hidden">
               <img
                 className="object-cover transition ease-in-out delay-150 hover:scale-110 duration-300 w-full h-full"
                 src={movie.poster_path ? img_base_path + movie.poster_path : 'NoPoster'}
                 alt={movie.title || movie.original_title || 'No Poster Available'}
               />
-            </div>
+            </Link>
             <div className="py-4 text-center">
               <h3 className="text-lg font-semibold mb-2">
                 {movie.title || movie.original_title || movie.name || movie.original_name}
