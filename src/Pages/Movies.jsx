@@ -37,7 +37,7 @@ function Movies() {
 
   return (
     <>
-      <div className='mt-[5rem] m-12 text-3xl font-bold my-6 p-12'>
+      <div className='movie mt-[5rem] m-12 text-3xl font-bold my-6 p-12'>
         <h1>All Movies</h1>
       </div>
       <div className="flex flex-wrap justify-center gap-8 mb-12">
