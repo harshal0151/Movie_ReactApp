@@ -126,8 +126,8 @@ p{
 
 @media (max-width:370px) {
   .search_bg p {
-   font-size: 0.9rem;
-   margin: 0.8rem;
+   font-size: 0.8rem;
+   margin: 0.9rem;
   }
  
   .search_bg h1{
@@ -148,3 +148,73 @@ p{
 
 
 /* sliders */
+
+
+
+@media (max-width:600px) {
+  #movieDisplay h2{
+    font-size: 1.2rem;
+  }
+  #movieDisplay span{
+font-size: 0.8rem;
+  }
+ .info{
+  font-size: 0.8rem;
+ }
+ .info p{
+  font-size: 0.7rem;
+ }
+}
+
+@media (max-width:421px) {
+  #movieDisplay h2{
+    font-size: 1rem;
+  }
+  #movieDisplay span{
+font-size: 0.7rem;
+  }
+ .info{
+  font-size: 0.7rem;
+  text-align: center;
+ }
+ .info p{
+  font-size: 0.7rem;
+ }
+ .movie .star p{
+  font-size: 0.6rem;
+ }
+ .movie .starIcon{
+  font-size: 0.6rem;
+ }
+}
+
+
+/* Footer section  */
+
+@media (max-width:600px) {
+  
+  footer .footer_p {
+  width: 100%;
+  font-size: 0.7rem;
+  }
+  
+  footer .footer_title li{
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width:420px) {
+  
+  footer .footer_p {
+
+  font-size: 0.6rem;
+  }
+
+  .footer_title{
+    gap: 10px;
+  }
+  
+  footer .footer_title li{
+    font-size: 0.6rem;
+  }
+}

@@ -31,9 +31,9 @@ function MovieDisplay({ movie }) {
           {movie.release_date ? formatDate(movie.release_date) : formatDate(movie.first_air_date)}
         </p>
       </div>
-      <div className="flex justify-center items-center gap-1 absolute bg-white px-2 rounded-lg right-3 top-2 ">
-        <FaStar className="text-amber-400 text-sm" />
-        <span className="text-black text-sm font-bold ">{Math.floor(movie.vote_average)}</span>
+      <div className="star flex justify-center items-center gap-1 absolute bg-white px-2 rounded-lg right-3 top-2 ">
+        <FaStar className="starIcon text-amber-400 text-sm" />
+        <p className="text-black text-sm font-bold ">{Math.floor(movie.vote_average)}</p>
       </div>
     </div>
   );

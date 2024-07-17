@@ -38,7 +38,7 @@ function MoviesDisplay({ heading, option1, option2, choice1, choice2 }) {
       {
         breakpoint: 420,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           dots: false,
         }

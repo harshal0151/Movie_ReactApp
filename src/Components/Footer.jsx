@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="flex flex-col justify-center items-center text-center mt-12">
       <div className="footer_links m-3">
-        <ul className="flex gap-10">
+        <ul className=" footer_title flex gap-10">
           <Link>
             <li>Terms Of Usw</li>
           </Link>
@@ -22,7 +22,7 @@ function Footer() {
           </Link>
         </ul>
       </div>
-      <p  className="w-[60%] m-6"> 
+      <p  className=" footer_p w-[60%] m-6"> 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
