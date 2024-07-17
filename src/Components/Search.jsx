@@ -28,11 +28,11 @@ function Search({ data }) {
 
   return (
     <>
-      <section className="w-full h-screen overflow-hidden relative">
+      <section className="search w-full h-screen overflow-hidden relative">
         {data && data.length > 0 ? (
           <Slider {...settings}>
             {data.map((item, index) => (
-              <div key={index} className="w-full h-screen">
+              <div key={index} className="search_bg w-full h-screen">
                 <img
                   src={img_base_path + item.backdrop_path}
                   alt={item.title || "Image"}
@@ -48,7 +48,7 @@ function Search({ data }) {
         ) : (
           <p>No data available</p>
         )}
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-8">
+        <div className="search_bg absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-8">
           <h1 className="text-5xl font-bold text-white">Welcome.</h1>
           <p className="text-lg text-gray-300 max-w-lg text-center">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione

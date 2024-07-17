@@ -36,7 +36,7 @@ function Header() {
 
   return (
     <header className='backdrop-blur-sm w-full fixed z-50 top-0'>
-      <div className='flex items-center justify-between py-5 px-[8rem]'>
+      <div className='navbar flex items-center justify-between py-5 px-[5rem]'>
         <div className="logo text-orange-400 text-1xl font-bold">
           <Link to="/"><span>MOVIES.com</span></Link>
         </div>

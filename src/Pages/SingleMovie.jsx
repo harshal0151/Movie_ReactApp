@@ -46,7 +46,7 @@ function SingleMovie() {
       <div className="opacity-layer"></div>
     </div>
 
-      <div className="absolute w-full h-screen flex justify-around p-5">
+      <div className="absolute w-full h-screen flex justify-around ">
         <div className="w-1/3 flex justify-center items-center">
           <img
             className="object-cover w-72 rounded-lg shadow-lg"
@@ -54,9 +54,9 @@ function SingleMovie() {
             alt={movie.title || movie.original_title}
           />
         </div>
-        <div className="w-2/3 flex flex-col gap-6 items-start justify-center text-white">
+        <div className="w-2/3 flex flex-col gap-6 items-start justify-center text-white px-5">
           <h1 className="text-4xl font-bold">{movie.title || movie.original_title}</h1>
-          <p className="text-lg">{movie.overview}</p>
+          <p className="text-lg w-[90%]">{movie.overview}</p>
           <div className="flex flex-col gap-2">
             <p className="text-lg flex gap-2">
               <strong>Release Date:</strong> {formatDate(movie.release_date)}
